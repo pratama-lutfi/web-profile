@@ -1,42 +1,45 @@
 import React from 'react';
 import profileImg from '../assets/profile.png';
+import { useAppContext } from '../context/AppContext';
 
 const Infobox = () => {
+  const { t, theme } = useAppContext();
+
   return (
-    <aside className="wiki-infobox fade-in">
-      <div className="infobox-title">Muhammad Lutfi Pratama</div>
+    <aside className="wiki-infobox fade-in" style={{ backgroundColor: 'var(--wiki-infobox-bg)', color: 'var(--wiki-text)', borderColor: 'var(--wiki-border)' }}>
+      <div className="infobox-title" style={{ backgroundColor: 'var(--wiki-border)', color: 'var(--wiki-heading)' }}>{t('name')}</div>
       <div style={{ textAlign: 'center' }}>
-        <img src={profileImg} alt="Muhammad Lutfi Pratama" className="infobox-image" />
-        <div style={{ fontSize: '0.75rem', marginBottom: '0.5rem' }}>Lutfi in 2026</div>
+        <img src={profileImg} alt={t('name')} className="infobox-image" style={{ borderColor: 'var(--wiki-border)' }} />
+        <div style={{ fontSize: '0.75rem', marginBottom: '0.5rem', color: 'var(--wiki-text)', opacity: 0.8 }}>{t('lutfiIn')} 2026</div>
       </div>
       <table className="infobox-table">
         <tbody>
           <tr>
-            <th>Role</th>
-            <td>Software Developer</td>
+            <th style={{ color: 'var(--wiki-text)' }}>{t('role')}</th>
+            <td style={{ color: 'var(--wiki-text)' }}>{t('softDev')}</td>
           </tr>
           <tr>
-            <th>Top Skills</th>
-            <td>Flutter, ReactJS, TypeScript, Kotlin, Swift, Golang</td>
+            <th style={{ color: 'var(--wiki-text)' }}>{t('topSkills')}</th>
+            <td style={{ color: 'var(--wiki-text)' }}>Flutter, ReactJS, TypeScript, Kotlin, Swift, Golang</td>
           </tr>
           <tr>
-            <th>Location</th>
-            <td>Jakarta, Indonesia</td>
+            <th style={{ color: 'var(--wiki-text)' }}>{t('location')}</th>
+            <td style={{ color: 'var(--wiki-text)' }}>Jakarta, Indonesia</td>
           </tr>
           <tr>
-            <th colSpan="2" style={{ textAlign: 'center', backgroundColor: '#eaecf0', fontWeight: 'bold', padding: '5px' }}>
-              Contact Information
+            <th colSpan="2" style={{ textAlign: 'center', backgroundColor: 'var(--wiki-border)', fontWeight: 'bold', padding: '5px', color: 'var(--wiki-heading)' }}>
+              {t('contactInfo')}
             </th>
           </tr>
           <tr>
-            <th>Email</th>
-            <td><a href="mailto:pratamalutfi60@gmail.com">pratamalutfi60@gmail.com</a></td>
+            <th style={{ color: 'var(--wiki-text)' }}>{t('email')}</th>
+            <td><a href="mailto:pratamalutfi60@gmail.com" style={{ color: 'var(--wiki-link)' }}>pratamalutfi60@gmail.com</a></td>
           </tr>
           <tr>
-            <th>Socials</th>
+            <th style={{ color: 'var(--wiki-text)' }}>{t('socials')}</th>
             <td>
-              <a href="https://github.com/pratama-lutfi">GitHub</a><br />
-              <a href="www.linkedin.com/in/muhammadlutfipratama">LinkedIn</a>
+              <a href="https://github.com/pratama-lutfi" style={{ color: 'var(--wiki-link)' }}>GitHub</a><br />
+              <a href="https://www.linkedin.com/in/muhammadlutfipratama" style={{ color: 'var(--wiki-link)' }}>LinkedIn</a>
             </td>
           </tr>
         </tbody>
@@ -45,12 +48,13 @@ const Infobox = () => {
         <button style={{
           width: '100%',
           padding: '0.5rem',
-          backgroundColor: '#f8f9fa',
-          border: '1px solid #a2a9b1',
+          backgroundColor: 'var(--wiki-infobox-bg)',
+          color: 'var(--wiki-text)',
+          border: '1px solid var(--wiki-border)',
           cursor: 'pointer',
           fontSize: '0.85rem'
         }}>
-          Download CV
+          {t('downloadCV')}
         </button>
       </div>
     </aside>

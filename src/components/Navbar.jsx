@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, Search, Settings, Puzzle, X } from 'lucide-react';
+import { Menu, Search, Settings, Puzzle, X, Sun, Moon, Languages, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatedUserIcon } from './AnimatedIcons';
+import { useAppContext } from '../context/AppContext';
 
 const Navbar = () => {
+  const { theme, toggleTheme, language, changeLanguage, t, toggleSidebar } = useAppContext();
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
   const searchRef = useRef(null);
   const navigate = useNavigate();
 
@@ -36,9 +39,9 @@ const Navbar = () => {
   const handleSearch = (e) => {
     const value = e.target.value;
     setQuery(value);
-    
+
     if (value.trim().length > 0) {
-      const filtered = searchableItems.filter(item => 
+      const filtered = searchableItems.filter(item =>
         item.title.toLowerCase().includes(value.toLowerCase()) ||
         item.description.toLowerCase().includes(value.toLowerCase())
       );
@@ -54,7 +57,8 @@ const Navbar = () => {
     navigate(path);
     setQuery('');
     setShowResults(false);
-    
+    setShowMobileSearch(false);
+
     // If it's a hash link, handle scrolling
     if (path.includes('#')) {
       const id = path.split('#')[1];
@@ -89,8 +93,8 @@ const Navbar = () => {
   return (
     <header className="wiki-header">
       <div className="header-left">
-        <div className="menu-button">
-          <Menu size={20} color="#202122" />
+        <div className="menu-button" onClick={toggleSidebar}>
+          <Menu size={20} color={theme === 'dark' ? '#eaecf0' : '#202122'} />
         </div>
         <a href="/" className="wiki-logo-container">
           <div className="wiki-logo-text">
@@ -98,38 +102,38 @@ const Navbar = () => {
             <Puzzle size={18} color="#3366cc" fill="#3366cc" style={{ marginLeft: '-2px' }} />
             <sup style={{ fontSize: '0.6rem', color: '#3366cc', marginLeft: '-4px' }}>25</sup>
           </div>
-          <span className="wiki-logo-subtext">25 years of the free encyclopedia</span>
+          <span className="wiki-logo-subtext">{t('logoSubtext')}</span>
         </a>
       </div>
 
-      <div className="header-center">
+      <div className={`header-center ${showMobileSearch ? 'mobile-visible' : ''}`}>
         <div className="wiki-search-wrapper" ref={searchRef}>
           <div className="wiki-search-container">
             <div className="wiki-search-input-wrapper">
               <Search size={18} color="#72777d" />
-              <input 
-                type="text" 
-                className="wiki-search-input" 
-                placeholder="Search Wikipedia" 
+              <input
+                type="text"
+                className="wiki-search-input"
+                placeholder={t('search')}
                 value={query}
                 onChange={handleSearch}
                 onFocus={() => query && setShowResults(true)}
                 onKeyDown={handleKeyDown}
               />
               {query && (
-                <X 
-                  size={16} 
-                  color="#72777d" 
-                  style={{ cursor: 'pointer' }} 
+                <X
+                  size={16}
+                  color="#72777d"
+                  style={{ cursor: 'pointer' }}
                   onClick={handleClear}
                 />
               )}
             </div>
-            <button 
+            <button
               className="wiki-search-button"
               onClick={handleSearchSubmit}
             >
-              Search
+              {t('searchBtn')}
             </button>
           </div>
 
@@ -137,8 +141,8 @@ const Navbar = () => {
             <div className="wiki-search-results">
               {results.length > 0 ? (
                 results.map((result, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="search-result-item"
                     onClick={() => handleResultClick(result.path)}
                   >
@@ -148,7 +152,7 @@ const Navbar = () => {
                 ))
               ) : (
                 <div className="search-no-results">
-                  No results found for "{query}"
+                  {t('noResults')} "{query}"
                 </div>
               )}
             </div>
@@ -157,12 +161,25 @@ const Navbar = () => {
       </div>
 
       <div className="header-right">
-        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+        <div className="mobile-only" onClick={() => setShowMobileSearch(!showMobileSearch)}>
+          <Search size={20} color={theme === 'dark' ? '#eaecf0' : '#54595d'} style={{ cursor: 'pointer' }} />
+        </div>
+
+        <div className="lang-toggle" onClick={() => changeLanguage(language === 'en' ? 'id' : 'en')}>
+          <Languages size={16} />
+          <span>{language === 'en' ? 'ID' : 'EN'}</span>
+        </div>
+
+        <div className="theme-toggle" onClick={toggleTheme}>
+          {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+        </div>
+
+        <a href="#" className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
           <AnimatedUserIcon />
-          <span>Log in</span>
+          <span>{t('login')}</span>
         </a>
-        <a href="#">Create account</a>
-        <Settings size={18} color="#54595d" style={{ cursor: 'pointer' }} />
+        <a href="#" className="desktop-only">{t('createAccount')}</a>
+        <Settings size={18} color={theme === 'dark' ? '#eaecf0' : '#54595d'} style={{ cursor: 'pointer' }} />
       </div>
     </header>
   );
