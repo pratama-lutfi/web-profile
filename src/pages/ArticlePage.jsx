@@ -7,16 +7,15 @@ const ArticlePage = () => {
   return (
     <PageLayout>
       <div className="fade-in">
-        <h1>Muhamad Luthfi</h1>
-        <p style={{ fontStyle: 'italic', marginBottom: '1.5rem' }}>From Wikipedia, the free encyclopedia</p>
-        
+        <h1>Muhammad Lutfi Pratama</h1>
+
         <Infobox />
 
         <p>
-          <strong>Muhamad Luthfi</strong> is a professional <strong>Full-Stack Developer</strong> and software engineer 
-          specializing in building scalable web applications and high-performance systems. Currently based in 
-          Jakarta, Luthfi has contributed to numerous open-source projects and led development for several 
-          high-growth technology firms. His primary expertise lies in <strong>React, Node.js, and Cloud Infrastructure</strong>.
+          <strong>Muhammad Lutfi Pratama</strong> is a <strong>Software Developer</strong> at <strong>PT. Bank Rakyat Indonesia</strong>, 
+          specializing in web and mobile application development. He is the lead developer of the <strong>Qlola IB Token</strong> 
+          mobile application and a contributor to major Internet Banking systems. With a background in Cloud Computing 
+          from Bangkit Academy, he is proficient in <strong>Flutter, ReactJS, and various mobile and web technologies</strong>.
         </p>
 
         <div className="wiki-contents-box">
@@ -31,17 +30,27 @@ const ArticlePage = () => {
 
         <h2 id="about">About Me</h2>
         <p>
-          Luthfi began his career in systems administration before transitioning to full-stack development. 
-          His work focuses on the intersection of user experience and performance optimization, particularly 
-          in complex enterprise environments. He holds a degree in Computer Science and has spent the last 
-          six years refining a development philosophy rooted in modularity and information clarity.
+          A computer science graduate with a big spirit for learning and high interest in software engineering. 
+          Currently employed at PT. Bank Rakyat Indonesia as a Software Developer, specializing in web and mobile application. 
+          I am responsible for developing the Qlola IB Token mobile application (new Qlola Mobile) from scratch for both iOS and 
+          Android using Flutter, with total downloads 42,916 for iOS, 92,058 for Android, and 252,000 active users by Firebase Analytics. 
+          Additionally, I contribute to the development of the Internet Banking website, focusing on transfer and payment features.
+        </p>
+        <p>
+          Have almost one year of combined real project or company-based project experience across several types of companies. 
+          My experience includes hands-on for a development-stage startup project called Deall by SejutaCita mobile app, 
+          working with software agency called Aksamedia & SCAP-ERP, and graduated from Bangkit Academy 2022 in Cloud Computing learning path.
+        </p>
+        <p>
+          Proficient in JavaScript, TypeScript, Flutter, Kotlin, Swift and ReactJS. As well as versatile enough to switch roles 
+          and learn new technologies when needed. Additionally, I am highly motivated to contribute to open-source projects.
         </p>
         <div style={{ marginBottom: '2rem' }}>
-          <button style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            padding: '0.5rem 1rem', 
-            backgroundColor: '#f8f9fa', 
+          <button style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            padding: '0.5rem 1rem',
+            backgroundColor: '#f8f9fa',
             border: '1px solid #a2a9b1',
             cursor: 'pointer'
           }}>
@@ -64,15 +73,15 @@ const ArticlePage = () => {
 
         <h2 id="skills">Skills & Tools</h2>
         <ul>
-          <li><strong>Frontend:</strong> React, Next.js, TypeScript, Tailwind CSS, Framer Motion</li>
-          <li><strong>Backend:</strong> Node.js, Express, PostgreSQL, MongoDB, Redis</li>
-          <li><strong>Tools:</strong> Docker, Kubernetes, AWS, Git, CI/CD</li>
+          <li><strong>Mobile:</strong> Flutter, Kotlin, Swift, Android Studio, Xcode</li>
+          <li><strong>Web:</strong> ReactJS, JavaScript, TypeScript, Tailwind CSS, Node.js</li>
+          <li><strong>Cloud & Tools:</strong> Google Cloud Platform (Cloud Computing), Git, Firebase Analytics</li>
         </ul>
 
         <h2 id="contact">Contact</h2>
         <p>
-          Luthfi can be reached via email at <a href="mailto:luthfi@dev.com">luthfi@dev.com</a> or through his 
-          professional social media profiles. He is always open to discussing new opportunities and 
+          Lutfi can be reached via email at <a href="mailto:pratamalutfi60@gmail.com">pratamalutfi60@gmail.com</a> or through his
+          professional social media profiles. He is always open to discussing new opportunities and
           collaborating on innovative projects.
         </p>
       </div>

@@ -8,15 +8,17 @@ import TalkPage from './pages/TalkPage';
 const App = () => {
   return (
     <Router>
-      <div className="wiki-container">
-        <Sidebar />
-        <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-          <Navbar />
-          <Routes>
-            <Route path="/article" element={<ArticlePage />} />
-            <Route path="/talk" element={<TalkPage />} />
-            <Route path="/" element={<Navigate to="/article" replace />} />
-          </Routes>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Navbar />
+        <div className="wiki-container">
+          <Sidebar />
+          <div style={{ flexGrow: 1 }}>
+            <Routes>
+              <Route path="/article" element={<ArticlePage />} />
+              <Route path="/talk" element={<TalkPage />} />
+              <Route path="/" element={<Navigate to="/article" replace />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </Router>

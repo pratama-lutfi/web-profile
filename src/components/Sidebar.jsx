@@ -8,14 +8,14 @@ const Sidebar = () => {
       <div style={{ marginBottom: '2rem', fontSize: '1.2rem', fontStyle: 'italic', fontWeight: 'bold' }}>
         Portfolio
       </div>
-      
+
       <div style={{ fontSize: '0.75rem', color: '#54595d', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
         Navigation
       </div>
       <ul style={{ listStyle: 'none', marginLeft: 0, fontSize: '0.85rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>
-          <NavLink 
-            to="/article" 
+          <NavLink
+            to="/article"
             style={{ display: 'flex', alignItems: 'center', color: 'inherit' }}
             className={({ isActive }) => isActive ? 'active-link' : ''}
           >
@@ -24,8 +24,8 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li style={{ marginBottom: '0.5rem' }}>
-          <NavLink 
-            to="/talk" 
+          <NavLink
+            to="/talk"
             style={{ display: 'flex', alignItems: 'center', color: 'inherit' }}
             className={({ isActive }) => isActive ? 'active-link' : ''}
           >
@@ -35,7 +35,7 @@ const Sidebar = () => {
         </li>
       </ul>
 
-      <div style={{ fontSize: '0.75rem', color: '#54595d', textTransform: 'uppercase', marginBottom: '0.5rem', marginTop: '1.5rem' }}>
+      {/* <div style={{ fontSize: '0.75rem', color: '#54595d', textTransform: 'uppercase', marginBottom: '0.5rem', marginTop: '1.5rem' }}>
         Contribute
       </div>
       <ul style={{ listStyle: 'none', marginLeft: 0, fontSize: '0.85rem' }}>
@@ -69,9 +69,10 @@ const Sidebar = () => {
           <Info size={14} style={{ marginRight: '8px' }} />
           <a href="#">About</a>
         </li>
-      </ul>
+      </ul> */}
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .active-link {
           font-weight: bold;
           color: var(--wiki-text) !important;

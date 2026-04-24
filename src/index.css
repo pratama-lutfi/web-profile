@@ -87,10 +87,107 @@ ul {
 
 .wiki-header {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
   padding: 0.5rem 1rem;
-  font-size: 0.8rem;
   background-color: var(--wiki-bg);
+  border-bottom: 1px solid var(--wiki-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 2rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.wiki-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  color: var(--wiki-heading);
+}
+
+.wiki-logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.5px;
+}
+
+.wiki-logo-subtext {
+  font-size: 0.6rem;
+  color: #54595d;
+}
+
+.wiki-search-container {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid var(--wiki-border);
+  background: #fff;
+  border-radius: 2px;
+}
+
+.wiki-search-input-wrapper {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0 0.5rem;
+}
+
+.wiki-search-input {
+  border: none;
+  padding: 0.5rem;
+  width: 100%;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.wiki-search-button {
+  background-color: #f8f9fa;
+  border: none;
+  border-left: 1px solid var(--wiki-border);
+  padding: 0 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: #202122;
+  font-size: 0.85rem;
+  transition: background-color 0.1s;
+}
+
+.wiki-search-button:hover {
+  background-color: #eaecf0;
+}
+
+.menu-button {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.menu-button:hover {
+  background-color: #eaecf0;
 }
 
 .wiki-tabs {
@@ -98,7 +195,7 @@ ul {
   margin-top: -1px;
   border-bottom: 1px solid var(--wiki-border);
   background-color: var(--wiki-bg);
-  padding-left: 2.5rem;
+  padding-left: 1.5rem;
 }
 
 .wiki-tab {
