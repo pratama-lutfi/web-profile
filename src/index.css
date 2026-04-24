@@ -38,7 +38,9 @@ a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-serif);
   font-weight: normal;
   border-bottom: 1px solid var(--wiki-border);
@@ -180,6 +182,62 @@ ul {
   background-color: #eaecf0;
 }
 
+.wiki-search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.wiki-search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid var(--wiki-border);
+  border-top: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover,
+.search-result-item.active {
+  background-color: #f8f9fa;
+}
+
+.search-result-title {
+  font-weight: bold;
+  color: var(--wiki-link);
+  font-size: 0.9rem;
+}
+
+.search-result-description {
+  font-size: 0.75rem;
+  color: #54595d;
+  margin-top: 2px;
+}
+
+.search-no-results {
+  padding: 1rem;
+  text-align: center;
+  color: #54595d;
+  font-style: italic;
+}
+
 .menu-button {
   cursor: pointer;
   padding: 4px;
@@ -284,18 +342,25 @@ ul {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
   .wiki-container {
     flex-direction: column;
   }
+
   .wiki-sidebar {
     width: 100%;
     border-bottom: 1px solid var(--wiki-border);
   }
+
   .wiki-infobox {
     float: none;
     width: 100%;

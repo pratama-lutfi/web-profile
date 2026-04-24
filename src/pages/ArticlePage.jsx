@@ -12,9 +12,9 @@ const ArticlePage = () => {
         <Infobox />
 
         <p>
-          <strong>Muhammad Lutfi Pratama</strong> is a <strong>Software Developer</strong> at <strong>PT. Bank Rakyat Indonesia</strong>, 
-          specializing in web and mobile application development. He is the lead developer of the <strong>Qlola IB Token</strong> 
-          mobile application and a contributor to major Internet Banking systems. With a background in Cloud Computing 
+          <strong>Muhammad Lutfi Pratama</strong> is a <strong>Software Developer</strong> at <strong>PT. Bank Rakyat Indonesia</strong>,
+          specializing in web and mobile application development. He is the lead developer of the <strong>Qlola IB Token</strong>
+          mobile application and a contributor to major Internet Banking systems. With a background in Cloud Computing
           from Bangkit Academy, he is proficient in <strong>Flutter, ReactJS, and various mobile and web technologies</strong>.
         </p>
 
@@ -30,19 +30,19 @@ const ArticlePage = () => {
 
         <h2 id="about">About Me</h2>
         <p>
-          A computer science graduate with a big spirit for learning and high interest in software engineering. 
-          Currently employed at PT. Bank Rakyat Indonesia as a Software Developer, specializing in web and mobile application. 
-          I am responsible for developing the Qlola IB Token mobile application (new Qlola Mobile) from scratch for both iOS and 
-          Android using Flutter, with total downloads 42,916 for iOS, 92,058 for Android, and 252,000 active users by Firebase Analytics. 
+          A computer science graduate with a big spirit for learning and high interest in software engineering.
+          Currently employed at PT. Bank Rakyat Indonesia as a Software Developer, specializing in web and mobile application.
+          I am responsible for developing the Qlola IB Token mobile application (new Qlola Mobile) from scratch for both iOS and
+          Android using Flutter, with total downloads 42,916 for iOS, 92,058 for Android, and 252,000 active users by Firebase Analytics.
           Additionally, I contribute to the development of the Internet Banking website, focusing on transfer and payment features.
         </p>
         <p>
-          Have almost one year of combined real project or company-based project experience across several types of companies. 
-          My experience includes hands-on for a development-stage startup project called Deall by SejutaCita mobile app, 
+          Have almost one year of combined real project or company-based project experience across several types of companies.
+          My experience includes hands-on for a development-stage startup project called Deall by SejutaCita mobile app,
           working with software agency called Aksamedia & SCAP-ERP, and graduated from Bangkit Academy 2022 in Cloud Computing learning path.
         </p>
         <p>
-          Proficient in JavaScript, TypeScript, Flutter, Kotlin, Swift and ReactJS. As well as versatile enough to switch roles 
+          Proficient in JavaScript, TypeScript, Flutter, Kotlin, Swift and ReactJS. As well as versatile enough to switch roles
           and learn new technologies when needed. Additionally, I am highly motivated to contribute to open-source projects.
         </p>
         <div style={{ marginBottom: '2rem' }}>
