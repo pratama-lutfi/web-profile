@@ -93,7 +93,7 @@ const Navbar = () => {
   return (
     <header className="wiki-header">
       <div className="header-left">
-        <div className="menu-button" onClick={toggleSidebar}>
+        <div className="menu-button mobile-only" onClick={toggleSidebar}>
           <Menu size={20} color={theme === 'dark' ? '#eaecf0' : '#202122'} />
         </div>
         <a href="/" className="wiki-logo-container">

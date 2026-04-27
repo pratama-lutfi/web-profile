@@ -26,6 +26,7 @@ const Infobox = () => {
             <th style={{ color: 'var(--wiki-text)' }}>{t('location')}</th>
             <td style={{ color: 'var(--wiki-text)' }}>Jakarta, Indonesia</td>
           </tr>
+          <br />
           <tr>
             <th colSpan="2" style={{ textAlign: 'center', backgroundColor: 'var(--wiki-border)', fontWeight: 'bold', padding: '5px', color: 'var(--wiki-heading)' }}>
               {t('contactInfo')}
@@ -45,17 +46,25 @@ const Infobox = () => {
         </tbody>
       </table>
       <div style={{ marginTop: '1rem', textAlign: 'center' }}>
-        <button style={{
-          width: '100%',
-          padding: '0.5rem',
-          backgroundColor: 'var(--wiki-infobox-bg)',
-          color: 'var(--wiki-text)',
-          border: '1px solid var(--wiki-border)',
-          cursor: 'pointer',
-          fontSize: '0.85rem'
-        }}>
+        <a
+          href="https://drive.google.com/file/d/1cxpJy8WTJy26KxbpgbOhtafLabkjA-sm/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'block',
+            width: '100%',
+            padding: '0.5rem',
+            backgroundColor: 'var(--wiki-infobox-bg)',
+            color: 'var(--wiki-text)',
+            border: '1px solid var(--wiki-border)',
+            cursor: 'pointer',
+            fontSize: '0.85rem',
+            textDecoration: 'none',
+            textAlign: 'center'
+          }}
+        >
           {t('downloadCV')}
-        </button>
+        </a>
       </div>
     </aside>
   );

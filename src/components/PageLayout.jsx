@@ -4,17 +4,17 @@ import { useAppContext } from '../context/AppContext';
 
 const Tabs = () => {
   const { t } = useAppContext();
-  
+
   return (
     <div className="wiki-tabs">
-      <NavLink 
-        to="/article" 
+      <NavLink
+        to="/article"
         className={({ isActive }) => `wiki-tab ${isActive ? 'active' : ''}`}
       >
         {t('article')}
       </NavLink>
-      <NavLink 
-        to="/talk" 
+      <NavLink
+        to="/talk"
         className={({ isActive }) => `wiki-tab ${isActive ? 'active' : ''}`}
       >
         {t('talk')}
@@ -31,8 +31,7 @@ const PageLayout = ({ children }) => {
       <main className="wiki-main" style={{ backgroundColor: 'var(--wiki-bg)', color: 'var(--wiki-text)' }}>
         {children}
         <footer className="wiki-footer" style={{ borderTop: '1px solid var(--wiki-border)', color: 'var(--wiki-text)', opacity: 0.6 }}>
-          <p>This page was last edited on 24 April 2026, at 11:08 (UTC).</p>
-          <p>Text is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply.</p>
+          <p>Copyright &copy; 2026 - Lutfi Pratama</p>
         </footer>
       </main>
     </>

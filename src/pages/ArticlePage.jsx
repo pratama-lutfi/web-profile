@@ -5,7 +5,7 @@ import { AnimatedEditIcon } from '../components/AnimatedIcons';
 import { useAppContext } from '../context/AppContext';
 
 const ArticlePage = () => {
-  const { t } = useAppContext();
+  const { t, language } = useAppContext();
 
   return (
     <PageLayout>
@@ -30,11 +30,11 @@ const ArticlePage = () => {
 
         <h2 id="about">{t('aboutMe')}</h2>
         <p>
-          {t('language') === 'en' ? (
+          {language === 'en' ? (
             <>
               A computer science graduate with a big spirit for learning and high interest in software engineering.
               Currently employed at PT. Bank Rakyat Indonesia as a Software Developer, specializing in web and mobile application.
-              I am responsible for developing the Qlola IB Token mobile application (new Qlola Mobile) from scratch for both iOS and
+              I am responsible for developing the Qlola IB Token mobile application (Qlola Mobile by BRI) from scratch for both iOS and
               Android using Flutter, with total downloads 42,916 for iOS, 92,058 for Android, and 252,000 active users by Firebase Analytics.
               Additionally, I contribute to the development of the Internet Banking website, focusing on transfer and payment features.
             </>
@@ -42,14 +42,14 @@ const ArticlePage = () => {
             <>
               Seorang lulusan ilmu komputer dengan semangat belajar yang besar dan minat yang tinggi dalam rekayasa perangkat lunak.
               Saat ini bekerja di PT. Bank Rakyat Indonesia sebagai Software Developer, yang mengkhususkan diri dalam aplikasi web dan seluler.
-              Saya bertanggung jawab untuk mengembangkan aplikasi seluler Qlola IB Token (Qlola Mobile baru) dari awal untuk iOS dan
-              Android menggunakan Flutter, dengan total unduhan 42.916 untuk iOS, 92.058 untuk Android, dan 252.000 pengguna aktif menurut Firebase Analytics.
+              Saya bertanggung jawab untuk mengembangkan aplikasi seluler Qlola IB Token (Qlola Mobile by BRI) dari awal untuk iOS dan
+              Android menggunakan Flutter, dengan total unduhan 42.916 untuk iOS, 92.058 untuk Android, dan 252.000 pengguna aktif berdasarkan Firebase Analytics.
               Selain itu, saya berkontribusi dalam pengembangan situs web Internet Banking, dengan fokus pada fitur transfer dan pembayaran.
             </>
           )}
         </p>
         <p>
-          {t('language') === 'en' ? (
+          {language === 'en' ? (
             <>
               Have almost one year of combined real project or company-based project experience across several types of companies.
               My experience includes hands-on for a development-stage startup project called Deall by SejutaCita mobile app,
@@ -64,7 +64,7 @@ const ArticlePage = () => {
           )}
         </p>
         <p>
-          {t('language') === 'en' ? (
+          {language === 'en' ? (
             <>
               Proficient in JavaScript, TypeScript, Flutter, Kotlin, Swift and ReactJS. As well as versatile enough to switch roles
               and learn new technologies when needed. Additionally, I am highly motivated to contribute to open-source projects.
@@ -77,17 +77,23 @@ const ArticlePage = () => {
           )}
         </p>
         <div style={{ marginBottom: '2rem' }}>
-          <button style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            padding: '0.5rem 1rem',
-            backgroundColor: 'var(--wiki-infobox-bg)',
-            color: 'var(--wiki-text)',
-            border: '1px solid var(--wiki-border)',
-            cursor: 'pointer'
-          }}>
+          <a
+            href="https://drive.google.com/file/d/1cxpJy8WTJy26KxbpgbOhtafLabkjA-sm/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: '0.5rem 1rem',
+              backgroundColor: 'var(--wiki-infobox-bg)',
+              color: 'var(--wiki-text)',
+              border: '1px solid var(--wiki-border)',
+              cursor: 'pointer',
+              textDecoration: 'none'
+            }}
+          >
             <AnimatedEditIcon /> {t('viewCV')}
-          </button>
+          </a>
         </div>
 
         <h2 id="projects">{t('projects')}</h2>

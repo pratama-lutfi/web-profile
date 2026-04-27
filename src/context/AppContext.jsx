@@ -15,6 +15,7 @@ export const AppProvider = ({ children }) => {
   }, [theme]);
 
   useEffect(() => {
+    document.documentElement.setAttribute('lang', language);
     localStorage.setItem('language', language);
   }, [language]);
 
@@ -63,10 +64,10 @@ export const AppProvider = ({ children }) => {
       contribute: 'Contribute',
       languages: 'Languages',
       noResults: 'No results found for',
-      logoSubtext: '25 years of the free encyclopedia',
+      logoSubtext: 'Let\'s connect, drop me a message',
       // Profile specific
       name: 'Muhammad Lutfi Pratama',
-      subtitle: 'From Wikipedia, the free encyclopedia',
+      subtitle: 'Let\'s connect, drop me a message',
       born: 'Born',
       nationality: 'Nationality',
       occupation: 'Occupation',
@@ -132,10 +133,10 @@ export const AppProvider = ({ children }) => {
       contribute: 'Kontribusi',
       languages: 'Bahasa',
       noResults: 'Tidak ada hasil ditemukan untuk',
-      logoSubtext: '25 tahun ensiklopedia bebas',
+      logoSubtext: 'Mari terhubung, kirimkan saya pesan',
       // Profile specific
       name: 'Muhammad Lutfi Pratama',
-      subtitle: 'Dari Wikipedia, ensiklopedia bebas',
+      subtitle: 'Mari terhubung, kirimkan saya pesan',
       born: 'Lahir',
       nationality: 'Kebangsaan',
       occupation: 'Pekerjaan',
