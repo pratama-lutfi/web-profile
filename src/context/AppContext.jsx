@@ -101,6 +101,10 @@ export const AppProvider = ({ children }) => {
       leaveMsg: 'Feel free to leave a message here.',
       general: 'General',
       talkDesc: 'This is a place to discuss improvements to the article. Please sign your posts with four tildes (~~~~).',
+      yourMessage: 'Your Message',
+      messagePlaceholder: 'How can I help you? Type your message here...',
+      sendMessage: 'Send Message via Gmail',
+      talkHint: 'This will open Gmail to compose your message to Muhammad Lutfi Pratama.',
     },
     id: {
       search: 'Cari Wikipedia',
@@ -170,6 +174,10 @@ export const AppProvider = ({ children }) => {
       leaveMsg: 'Jangan ragu untuk meninggalkan pesan di sini.',
       general: 'Umum',
       talkDesc: 'Ini adalah tempat untuk mendiskusikan perbaikan pada artikel. Harap tanda tangani postingan Anda dengan empat tilde (~~~~).',
+      yourMessage: 'Pesan Anda',
+      messagePlaceholder: 'Bagaimana saya bisa membantu Anda? Ketik pesan Anda di sini...',
+      sendMessage: 'Kirim Pesan via Gmail',
+      talkHint: 'Ini akan membuka Gmail untuk menyusun pesan Anda kepada Muhammad Lutfi Pratama.',
     }
   };
 

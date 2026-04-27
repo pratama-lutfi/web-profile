@@ -457,3 +457,165 @@ ul {
 .theme-toggle:hover, .lang-toggle:hover {
   background: var(--wiki-border);
 }
+
+/* Talk Page Styles */
+.talk-form-container {
+  max-width: 800px;
+  margin: 2rem 0;
+  padding: 2.5rem;
+  border: 1px solid var(--wiki-border);
+  background-color: var(--wiki-infobox-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.talk-form-container:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.talk-input-group {
+  margin-bottom: 2rem;
+}
+
+.talk-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: var(--wiki-heading);
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+}
+
+.talk-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 1.2rem;
+  border: 1px solid var(--wiki-border);
+  background-color: var(--wiki-bg);
+  color: var(--wiki-text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  border-radius: 6px;
+  resize: vertical;
+  transition: all var(--transition-speed);
+  outline: none;
+}
+
+.talk-textarea:focus {
+  border-color: var(--wiki-link);
+  box-shadow: 0 0 0 3px rgba(51, 102, 204, 0.15);
+}
+
+.talk-textarea::placeholder {
+  color: #a2a9b1;
+  opacity: 0.7;
+}
+
+.talk-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.8rem 2rem;
+  background-color: var(--wiki-link);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(51, 102, 204, 0.2);
+}
+
+.talk-submit-btn:hover:not(:disabled) {
+  background-color: var(--wiki-link-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(51, 102, 204, 0.3);
+}
+
+.talk-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.talk-submit-btn:disabled {
+  background-color: #a2a9b1;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+.talk-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #54595d;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+[data-theme='dark'] .talk-hint {
+  color: #9aa0a7;
+}
+
+@media (max-width: 768px) {
+  .talk-form-container {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .talk-submit-btn {
+    width: 100%;
+  }
+}
+
+/* Wikipedia Editor Toolbar */
+.wiki-toolbar {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid var(--wiki-border);
+  padding: 6px 12px;
+  gap: 4px;
+}
+
+[data-theme='dark'] .wiki-toolbar {
+  background-color: #20262e;
+}
+
+.toolbar-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  color: var(--wiki-text);
+  font-family: var(--font-serif);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.1s;
+}
+
+.toolbar-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: #a2a9b1;
+}
+
+[data-theme='dark'] .toolbar-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.toolbar-separator {
+  width: 1px;
+  height: 20px;
+  background-color: var(--wiki-border);
+  margin: 0 4px;
+}
