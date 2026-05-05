@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageLayout from '../components/PageLayout';
 import Infobox from '../components/Infobox';
 import { AnimatedEditIcon } from '../components/AnimatedIcons';
 import { useAppContext } from '../context/AppContext';
+import { projects } from '../data/projects';
 
 const ArticlePage = () => {
   const { t, language } = useAppContext();
+  const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <PageLayout>
@@ -35,7 +37,7 @@ const ArticlePage = () => {
               A computer science graduate with a big spirit for learning and high interest in software engineering.
               Currently employed at PT. Bank Rakyat Indonesia as a Software Developer, specializing in web and mobile application.
               I am responsible for developing the Qlola IB Token mobile application (Qlola Mobile by BRI) from scratch for both iOS and
-              Android using Flutter, with total downloads 42,916 for iOS, 92,058 for Android, and 252,000 active users by Firebase Analytics.
+              Android using Flutter, with total downloads <b>42,916</b> for iOS, <b>92,058</b> for Android, and <b>252,000</b> active users by Firebase Analytics.
               Additionally, I contribute to the development of the Internet Banking website, focusing on transfer and payment features.
             </>
           ) : (
@@ -43,7 +45,7 @@ const ArticlePage = () => {
               Seorang lulusan ilmu komputer dengan semangat belajar yang besar dan minat yang tinggi dalam rekayasa perangkat lunak.
               Saat ini bekerja di PT. Bank Rakyat Indonesia sebagai Software Developer, yang mengkhususkan diri dalam aplikasi web dan seluler.
               Saya bertanggung jawab untuk mengembangkan aplikasi seluler Qlola IB Token (Qlola Mobile by BRI) dari awal untuk iOS dan
-              Android menggunakan Flutter, dengan total unduhan 42.916 untuk iOS, 92.058 untuk Android, dan 252.000 pengguna aktif berdasarkan Firebase Analytics.
+              Android menggunakan Flutter, dengan total unduhan <b>42.916</b> untuk iOS, <b>92.058</b> untuk Android, dan <b>252.000</b> pengguna aktif berdasarkan Firebase Analytics.
               Selain itu, saya berkontribusi dalam pengembangan situs web Internet Banking, dengan fokus pada fitur transfer dan pembayaran.
             </>
           )}
@@ -52,14 +54,14 @@ const ArticlePage = () => {
           {language === 'en' ? (
             <>
               Have almost one year of combined real project or company-based project experience across several types of companies.
-              My experience includes hands-on for a development-stage startup project called Deall by SejutaCita mobile app,
-              working with software agency called Aksamedia & SCAP-ERP, and graduated from Bangkit Academy 2022 in Cloud Computing learning path.
+              My experience includes hands-on for a development-stage startup project called <b>Deall by SejutaCita</b> mobile app,
+              working with software agency called <b>Aksamedia</b> & <b>SCAP-ERP</b>, and graduated from <b>Bangkit Academy 2022</b> in <b>Cloud Computing</b> learning path.
             </>
           ) : (
             <>
               Memiliki hampir satu tahun pengalaman gabungan proyek nyata atau proyek berbasis perusahaan di beberapa jenis perusahaan.
-              Pengalaman saya meliputi pengerjaan langsung untuk proyek startup tahap pengembangan yang disebut aplikasi seluler Deall by SejutaCita,
-              bekerja dengan agensi perangkat lunak bernama Aksamedia & SCAP-ERP, dan lulus dari Bangkit Academy 2022 di jalur pembelajaran Cloud Computing.
+              Pengalaman saya meliputi pengerjaan langsung untuk proyek startup tahap pengembangan yang disebut aplikasi seluler <b>Deall by SejutaCita</b>,
+              bekerja dengan agensi perangkat lunak bernama <b>Aksamedia</b> & <b>SCAP-ERP</b>, dan lulus dari <b>Bangkit Academy 2022</b> di jalur pembelajaran <b>Cloud Computing</b>.
             </>
           )}
         </p>
@@ -97,15 +99,60 @@ const ArticlePage = () => {
         </div>
 
         <h2 id="projects">{t('projects')}</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
-          {[1, 2].map((i) => (
-            <div key={i} style={{ border: '1px solid var(--wiki-border)', padding: '0.5rem', backgroundColor: 'var(--wiki-infobox-bg)' }}>
-              <div style={{ height: '150px', backgroundColor: 'var(--wiki-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem', border: '1px solid var(--wiki-border)' }}>
-                <span style={{ color: 'var(--wiki-text)', opacity: 0.7 }}>{t('projectScreenshot')} {i}</span>
+        <div style={{ marginTop: '2rem' }}>
+          {projects.map((project) => (
+            <section key={project.id} className="project-section" style={{ marginBottom: '4rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', borderBottom: '1px solid var(--wiki-border)', paddingBottom: '0.5rem', marginBottom: '1.2rem' }}>
+                <h3 style={{ fontSize: '1.6rem', margin: 0, fontFamily: 'var(--font-serif)', color: 'var(--wiki-heading)' }}>
+                  {project.title}
+                </h3>
               </div>
-              <div style={{ fontWeight: 'bold', color: 'var(--wiki-text)' }}>{i === 1 ? 'Qlola IB Token' : 'Internet Banking BRI'}</div>
-              <div style={{ fontSize: '0.8rem', color: 'var(--wiki-text)', opacity: 0.8 }}>{t('projectDesc')}</div>
-            </div>
+
+              <ul className={`wiki-gallery mobile-frames`} style={{ marginBottom: '1.5rem' }}>
+                {project.images.map((img, idx) => (
+                  <li
+                    key={idx}
+                    className="wiki-gallery-item"
+                    onClick={() => setSelectedImage({ src: img, title: `${project.title} - ${language === 'en' ? 'Image' : 'Gambar'} ${idx + 1}` })}
+                  >
+                    <div className="wiki-gallery-img-container">
+                      <img src={img} alt={`${project.title} ${idx + 1}`} loading="lazy" />
+                    </div>
+                    <div className="wiki-gallery-caption">
+                      <span style={{ fontWeight: 'bold' }}>{project.title}</span> – {language === 'en' ? 'Detailed view' : 'Tampilan detail'} {idx + 1}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                {project.tools.map((tool, index) => (
+                  <span
+                    key={index}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      fontSize: '0.8rem',
+                      fontWeight: '500',
+                      color: 'var(--wiki-text)',
+                      backgroundColor: 'var(--wiki-infobox-bg)',
+                      padding: '0.4rem 0.8rem',
+                      border: '1px solid var(--wiki-border)',
+                      borderRadius: '20px',
+                      boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+                    }}
+                  >
+                    <tool.icon size={14} />
+                    {tool.name}
+                  </span>
+                ))}
+              </div>
+
+              <p style={{ fontSize: '1.05rem', color: 'var(--wiki-text)', opacity: 0.9, marginBottom: '2rem', maxWidth: '800px', lineHeight: '1.7' }}>
+                {project.description[language]}
+              </p>
+            </section>
           ))}
         </div>
 
@@ -121,6 +168,19 @@ const ArticlePage = () => {
           {t('contactText1')} <a href="mailto:pratamalutfi60@gmail.com">pratamalutfi60@gmail.com</a> {t('contactText2')}
         </p>
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div className="wiki-lightbox" onClick={() => setSelectedImage(null)}>
+          <div className="wiki-lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="wiki-lightbox-close" onClick={() => setSelectedImage(null)} aria-label="Close" title="Close">×</button>
+            <div className="wiki-lightbox-img-wrapper">
+              <img src={selectedImage.src} alt={selectedImage.title} />
+            </div>
+            <div className="wiki-lightbox-title">{selectedImage.title}</div>
+          </div>
+        </div>
+      )}
     </PageLayout>
   );
 };

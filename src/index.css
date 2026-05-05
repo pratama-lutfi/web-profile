@@ -619,3 +619,167 @@ ul {
   background-color: var(--wiki-border);
   margin: 0 4px;
 }
+
+/* Wikipedia Gallery Styles */
+.wiki-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.wiki-gallery-item {
+  border: 1px solid var(--wiki-border);
+  background-color: var(--wiki-infobox-bg);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.wiki-gallery-item:hover {
+  background-color: var(--wiki-bg);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
+  border-color: var(--wiki-link);
+}
+
+[data-theme='dark'] .wiki-gallery-item:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.wiki-gallery-img-container {
+  aspect-ratio: var(--gallery-aspect, 16 / 10);
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--wiki-bg);
+  border: 1px solid var(--wiki-border);
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.wiki-gallery.mobile-frames {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.wiki-gallery.mobile-frames .wiki-gallery-img-container {
+  aspect-ratio: 9 / 19.5;
+  border-radius: 32px;
+  border: 8px solid #1a1a1a;
+  background-color: #000;
+  position: relative;
+}
+
+[data-theme='dark'] .wiki-gallery.mobile-frames .wiki-gallery-img-container {
+  border-color: #2a2a2a;
+}
+
+.wiki-gallery.mobile-frames img {
+  border-radius: 24px;
+}
+
+.wiki-gallery-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+.wiki-gallery-item:hover .wiki-gallery-img-container img {
+  transform: scale(1.03);
+}
+
+.wiki-gallery-caption {
+  margin-top: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  text-align: left;
+  color: var(--wiki-text);
+  border-left: 3px solid var(--wiki-border);
+  transition: border-color 0.3s ease;
+}
+
+.wiki-gallery-item:hover .wiki-gallery-caption {
+  border-left-color: var(--wiki-link);
+}
+
+/* Wikipedia Lightbox (Media Viewer) Styles */
+.wiki-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+.wiki-lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--wiki-bg);
+  border: 1px solid var(--wiki-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-radius: 2px;
+}
+
+.wiki-lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.wiki-lightbox-close:hover {
+  color: #a2a9b1;
+}
+
+.wiki-lightbox-img-wrapper {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+}
+
+[data-theme='dark'] .wiki-lightbox-img-wrapper {
+  background: #101418;
+}
+
+.wiki-lightbox-img-wrapper img {
+  max-width: 100%;
+  max-height: calc(90vh - 60px); /* Leave room for title */
+  object-fit: contain;
+}
+
+.wiki-lightbox-title {
+  padding: 1rem;
+  background-color: var(--wiki-infobox-bg);
+  color: var(--wiki-text);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--wiki-border);
+  font-family: var(--font-sans);
+}
