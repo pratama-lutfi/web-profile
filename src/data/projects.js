@@ -11,6 +11,21 @@ import p2_5 from '../assets/projects/project_2-5.png';
 
 export const projects = [
   {
+    id: 'bri-internet-banking',
+    title: 'Internet Banking BRI',
+    description: {
+      en: 'Web-based internet banking platform focusing on transfer and payment features, ensuring high availability and secure transactions.',
+      id: 'Platform internet banking berbasis web yang berfokus pada fitur transfer dan pembayaran, memastikan ketersediaan tinggi dan transaksi yang aman.'
+    },
+    images: [p2_1, p2_2, p2_3, p2_4, p2_5],
+    tools: [
+      { name: 'ReactJS', icon: Layout },
+      { name: 'TypeScript', icon: Code },
+      { name: 'Cloud', icon: Cloud }
+    ],
+    link: '#'
+  },
+  {
     id: 'qlola-mobile',
     title: 'Qlola Mobile by BRI',
     description: {
@@ -25,19 +40,4 @@ export const projects = [
     ],
     link: '#'
   },
-  {
-    id: 'bri-internet-banking',
-    title: 'Internet Banking BRI',
-    description: {
-      en: 'Web-based internet banking platform focusing on transfer and payment features, ensuring high availability and secure transactions.',
-      id: 'Platform internet banking berbasis web yang berfokus pada fitur transfer dan pembayaran, memastikan ketersediaan tinggi dan transaksi yang aman.'
-    },
-    images: [p2_1, p2_2, p2_3, p2_4, p2_5],
-    tools: [
-      { name: 'ReactJS', icon: Layout },
-      { name: 'TypeScript', icon: Code },
-      { name: 'Cloud', icon: Cloud }
-    ],
-    link: '#'
-  }
 ];

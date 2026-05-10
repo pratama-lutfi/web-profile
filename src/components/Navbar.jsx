@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, Search, Settings, Puzzle, X, Sun, Moon, Languages, User } from 'lucide-react';
+import { Menu, Search, Puzzle, X, Sun, Moon, Languages } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { AnimatedUserIcon } from './AnimatedIcons';
 import { useAppContext } from '../context/AppContext';
 
 const Navbar = () => {
@@ -173,13 +172,6 @@ const Navbar = () => {
         <div className="theme-toggle" onClick={toggleTheme}>
           {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
         </div>
-
-        <a href="#" className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-          <AnimatedUserIcon />
-          <span>{t('login')}</span>
-        </a>
-        <a href="#" className="desktop-only">{t('createAccount')}</a>
-        <Settings size={18} color={theme === 'dark' ? '#eaecf0' : '#54595d'} style={{ cursor: 'pointer' }} />
       </div>
     </header>
   );
